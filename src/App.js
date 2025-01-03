@@ -1,11 +1,18 @@
 import './App.css';
+import Head from './component/head';
+import Body from './component/body';
+import { Provider } from 'react-redux';
+import store from './utils/store';
 
 function App() {
   return (
+    <Provider store={store}>
     <div>
-      <h1 className="text-red-800 bg-pink-200 ">Namste Youtube</h1>
+      <Head />
+      <Body />
     </div>
-  )
-}
+    </Provider>
+  );
+};
 
 export default App;
