@@ -2,7 +2,7 @@
 import Sidebar from './sidebar';
 import Maincontainer from './maincontainer';
 
-function body() {
+const body = () => {
   
   return (
     <div className='flex'>

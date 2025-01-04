@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { YoutubeVideoApi } from '../utils/constant';
+import Videocard from './videocard';
 
-function videocontainer() {
+const Videocontainer = () => {
+ const [videos, setVideos] = useState([]);
+
+
+
+  useEffect(() => {
+    getVideos();
+  } ,[]);
+
+  const getVideos = async () => { 
+    const data = await fetch(YoutubeVideoApi);
+    const json = await data.json();
+   
+    setVideos(json.items);
+  };
   return (
-    <div>videocontainer</div>
+    <div>
+      <Videocard info={videos[0]} />
+    </div>
   )
 }
 
-export default videocontainer;
+export default Videocontainer;

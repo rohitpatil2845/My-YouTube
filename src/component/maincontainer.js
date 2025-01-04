@@ -2,7 +2,7 @@ import React from 'react'
 import Buttonlist from './buttonlist'
 import Videocontainer from './videocontainer';
 
-function maincontainer() {
+const maincontainer = () => {
   return (
     <div className=''>
     <Buttonlist />
