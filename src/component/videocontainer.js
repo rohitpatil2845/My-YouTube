@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { YoutubeVideoApi } from '../utils/constant';
-import Videocard from './videocard';
+import Videocard , {AdVideoCard} from './videocard';
 import { Link } from 'react-router-dom';
 
 const Videocontainer = () => {
@@ -25,10 +25,10 @@ const Videocontainer = () => {
       ) : (
         <div>Loading videos...</div> // Fallback while loading
       )} */}
-
+     {videos[0] && <AdVideoCard info={videos[0]} />}
       {videos.map((video) => (
-       <Link to={"/watch?v=" + video.id}>
-       <Videocard key={video.id} info={video} />
+       <Link  key={video.id}  to={"/watch?v=" + video.id}>
+       <Videocard info={video} />
        </Link>
       ))}
     </div>
