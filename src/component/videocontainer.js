@@ -18,14 +18,14 @@ const Videocontainer = () => {
     setVideos(json.items); 
   };
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap content-center'>
       {/* Render only if videos[0] exists
       {videos.length > 0 ? (
         <Videocard info={videos[0]} />
       ) : (
         <div>Loading videos...</div> // Fallback while loading
       )} */}
-     {videos[0] && <AdVideoCard info={videos[0]} />}
+     {videos[1] && <AdVideoCard info={videos[1]} />}
       {videos.map((video) => (
        <Link  key={video.id}  to={"/watch?v=" + video.id}>
        <Videocard info={video} />
