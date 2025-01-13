@@ -12,8 +12,6 @@ const Livechat = () => {
   const Chatmessages = useSelector((store) => store.chat.messages);
   useEffect(() => {
     const i = setInterval(() => {
-    
-
       dispatch(
         addMessage({
           name: generate(),
@@ -37,7 +35,14 @@ const Livechat = () => {
         className="w-full p-2 m-2 border border-black"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log("ac");
+          console.log("ac", livemessage);
+          dispatch(
+            addMessage({
+              name: "Rohit Patil",
+              message:livemessage,
+            })
+          );
+          SetLiveMesssage("");
         }}
       >
         <input
